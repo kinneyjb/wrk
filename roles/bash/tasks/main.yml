@@ -1,0 +1,20 @@
+- name: copy bashrc
+  ansible.builtin.copy:
+    directory_mode: true
+    src: bashrc
+    dest: ~/.bashrc
+    mode: '0600'
+    backup: true
+
+- name: "create ~/.bashrc.d directory"
+  ansible.builtin.file:
+    path: ~/.bashrc.d
+    state: directory
+    mode: '0700'
+
+- name: copy .bashrc.d directory
+  ansible.builtin.copy:
+    directory_mode: true
+    src: bashrc.d/
+    dest: ~/.bashrc.d/
+    mode: '0600'
