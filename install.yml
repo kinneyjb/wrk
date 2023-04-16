@@ -1,0 +1,9 @@
+- hosts: workstation
+  roles:
+    - epel
+    - git
+    - vim
+    - vscode
+    - tig
+
+

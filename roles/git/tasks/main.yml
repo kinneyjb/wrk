@@ -1,0 +1,15 @@
+---
+- name: install gitconfig
+  ansible.builtin.copy:
+    src: gitconfig
+    dest: ~/.gitconfig
+    mode: '0600'
+    force: true
+
+- name: install gitignore
+  ansible.builtin.copy:
+    src: gitignore
+    dest: ~/.gitignore
+    mode: '0600'
+    force: true
+...
