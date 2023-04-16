@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = develop
+[user]
+	name = kinneyjb
+	email = kinneyjb.git@gmail.com
+
+[core]
+    excludesfile = ~/.gitignore
+
+[alias]
+    hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    unstage = reset HEAD

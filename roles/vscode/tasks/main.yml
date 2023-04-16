@@ -1,0 +1,25 @@
+---
+# https://code.visualstudio.com/docs/setup/linux
+
+- name: Import Microsoft gpg key
+  become: true
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Setup Visual Studio Code yum repository
+  become: true
+  ansible.builtin.yum_repository:
+    name: Visual_Studio_Code
+    description: Microsoft Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    enabled: true
+    gpgcheck: true
+
+- name: Install Visual Studio Code
+  become: true
+  ansible.builtin.package:
+    name: code
+    state: present
+...

@@ -1,0 +1,8 @@
+---
+- name: install vimrc
+  ansible.builtin.copy:
+    src: vimrc
+    dest: ~/.vimrc
+    mode: '0600'
+    force: true
+...
